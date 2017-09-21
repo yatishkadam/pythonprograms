@@ -5,7 +5,7 @@ import mysql.connector
 from sendgrid.helpers.mail import *
 
 url="https://developers.zomato.com/api/v2.1/"
-headers= {'user-key': 'fadc8eadd9c133e84e3426eb5f7d687e'}
+headers= {'user-key': ''}
 
 def get_reviews(resId):
     url1= url+"reviews?res_id="+resId
@@ -17,9 +17,9 @@ def get_reviews(resId):
 
 
 def sendemail(text, sentiment):
-    sg = sendgrid.SendGridAPIClient(apikey='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')
-    from_email = Email("yatish23993@gmail.com")
-    to_email = Email("yatish23993@gmail.com")
+    sg = sendgrid.SendGridAPIClient(apikey='')
+    from_email = Email("")
+    to_email = Email("")
     subject = "Sending with SendGrid is Fun"
     content = Content("text/plain", "Review ->\n"+text+"  \n the sentiment analysis\n"+sentiment )
     mail = Mail(from_email, subject, to_email, content)
